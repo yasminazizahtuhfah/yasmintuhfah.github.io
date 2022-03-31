@@ -45,25 +45,24 @@
         });
     </script>
 	
-	
-	 
-    <script src = "https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script type="text/javascript">
-	     $(function(){
-	        $.get('./scraping2.json', function(obj){
-		 	var str = "<table border = 1>";
-			str+="<tr><td>No</td><td>Judul</td><td>Judul</td><td>Image</td><td>Waktu_Scrapping</td></tr>";
-			$.each(obj,function(n,scraping2){
-				str += "<tr><td>"+scraping2.No+"</td>";
-				str += "<td>"+scraping2.Judul+"</td>";
-				str += "<td><img src=" + scraping2.Image+"></td>";
-				str += "<td>"+scraping2.Waktu_Scrapping+"</td></tr>";
-		  	});
-		        str+="</table>";
-			$('#scraping2_json').html(str);
-		});
-	});
-   </script>
+	<script src = "https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type = "text/javascript">
+        $(function(){
+            $.get('./scraping2.json', function(obj) {
+                var str = "<table border = 1>";
+                str += "<tr><td>No</td><td>Judul</td><td>image</td><td>Scrap Time</td></tr>";
+                $.each(obj,function(n,data){
+                     str += "<tr><td>"+(n+1)+"</td>";
+                     str += "<td>"+data.Judul+"</td>";
+					 str += "<td><img src="+data.Image+"></td>";
+                     str += "<td>"+data.Waktu_Scrapping+"</td></tr>";
+                });
+                str += "</table>";
+                $('#scraping2_json').html(str);
+            });
+        });
+		
+    </script>
 	
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-cce2"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
@@ -166,6 +165,8 @@
 				   <a href = https://goo.gl/maps/Yu1eE1zLc1iyLo7j9/>My Home</a>
 				   <h1>Headline Repulika Online</h1>
 					<div id="headline_json"></div>
+					<h1>Daftar website 100</h1>
+					<div id="scraping2_json"></div>
 				  <p> <b> Watch the video to know more about me! </b> </p>
 				  <video width="200" src="images/men.mp4" controls>
                   <div class="u-social-icons u-spacing-10 u-social-icons-1">
