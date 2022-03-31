@@ -49,19 +49,19 @@
 	 
     <script src = "https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script type="text/javascript">
-	$(function(){
-	$.getJSON('scraping2.json',function(obj){
-	var str="<table border=1>";
-	str+="<tr><td>No</td><td>Judul</td><td>Judul</td><td>Image</td><td>Waktu_Scrapping</td></tr>";
-	$.each(obj,function(n,scraping2){
-	str+="<tr><td>"+scraping2.No+"</td>";
-	str+="<td>"+scraping2.Judul+"</td>";
-str+="<td>"+scraping2.Image+"</td>";
-	str+="<td><img src=" + scraping2.Image + "></td>";
-	str+="<td>"+scraping2.Waktu_Scrapping+"</td></tr>";
-	});
-         str+="</table>";
-                      $('#scraping2_json').html(str);
+	     $(function(){
+	        $.get('./scraping2.json', function(obj){
+		 	var str = "<table border = 1>";
+			str+="<tr><td>No</td><td>Judul</td><td>Judul</td><td>Image</td><td>Waktu_Scrapping</td></tr>";
+			$.each(obj,function(n,scraping2){
+				str += "<tr><td>"+scraping2.No+"</td>";
+				str += "<td>"+scraping2.Judul+"</td>";
+				str += "<td>"+scraping2.Image+"</td>";
+				str += "<td><img src=" + scraping2.Image+"></td>";
+				str += "<td>"+scraping2.Waktu_Scrapping+"</td></tr>";
+		  	});
+		        str+="</table>";
+			$('#scraping2_json').html(str);
 		});
 	});
    </script>
