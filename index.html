@@ -14,25 +14,7 @@
     <meta name="generator" content="Nicepage 4.5.4, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
-    
-    <script src = "https://code.jquery.com/jquery-3.6.0.js"></script>
-							<script type="text/javascript">
-							$(function(){
-								$.getJSON('scraping2.json',function(obj){
-								var str="<table border=1>";
-								str+="<tr><td>No</td><td>Judul</td><td>Judul</td><td>Image</td><td>Waktu_Scrapping</td></tr>";
-								$.each(obj,function(n,scraping2){
-								str+="<tr><td>"+scraping2.No+"</td>";
-								str+="<td>"+scraping2.Judul+"</td>";
-								str+="<td>"+scraping2.Image+"</td>";
-								str+="<td><img src=" + scraping2.Image + "></td>";
-								str+="<td>"+scraping2.Waktu_Scrapping+"</td></tr>";
-								});
-								str+="</table>";
-								$('#scraping2_json').html(str);
-								});
-							});
-							</script>
+   
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -62,6 +44,28 @@
             });
         });
     </script>
+	
+	
+	 
+    <script src = "https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(function(){
+	$.getJSON('scraping2.json',function(obj){
+	var str="<table border=1>";
+	str+="<tr><td>No</td><td>Judul</td><td>Judul</td><td>Image</td><td>Waktu_Scrapping</td></tr>";
+	$.each(obj,function(n,scraping2){
+	str+="<tr><td>"+scraping2.No+"</td>";
+	str+="<td>"+scraping2.Judul+"</td>";
+str+="<td>"+scraping2.Image+"</td>";
+	str+="<td><img src=" + scraping2.Image + "></td>";
+	str+="<td>"+scraping2.Waktu_Scrapping+"</td></tr>";
+	});
+         str+="</table>";
+                      $('#scraping2_json').html(str);
+		});
+	});
+   </script>
+	
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-cce2"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
           <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
